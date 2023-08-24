@@ -1,0 +1,17 @@
+### Resgate de informações de jogo
+GET https://www.freetogame.com/api/games
+
+### Pataform list: pc, browser or all
+GET https://www.freetogame.com/api/games?platform=pc
+
+### Cathegory list: mmorpg, shooter, strategy, moba, racing, sports, social, sandbox, open-world, survival, pvp, pve, pixel, voxel, zombie, turn-based, first-person, third-Person, top-down, tank, space, sailing, side-scroller, superhero, permadeath, card, battle-royale, mmo, mmofps, mmotps, 3d, 2d, anime, fantasy, sci-fi, fighting, action-rpg, action, military, martial-arts, flight, low-spec, tower-defense, horror, mmorts
+GET https://www.freetogame.com/api/games?category=shooter
+
+### Sort list: release-date, popularity, alphabetical or relevance
+GET https://www.freetogame.com/api/games?sort-by=alphabetical
+
+### Tag list: mmorpg, shooter, strategy, moba, racing, sports, social, sandbox, open-world, survival, pvp, pve, pixel, voxel, zombie, turn-based, first-person, third-Person, top-down, tank, space, sailing, side-scroller, superhero, permadeath, card, battle-royale, mmo, mmofps, mmotps, 3d, 2d, anime, fantasy, sci-fi, fighting, action-rpg, action, military, martial-arts, flight, low-spec, tower-defense, horror, mmorts
+GET https://www.freetogame.com/api/filter?tag=3d.mmorpg.fantasy.pvp
+
+### Fetch single
+GET https://www.freetogame.com/api/game?id=452
