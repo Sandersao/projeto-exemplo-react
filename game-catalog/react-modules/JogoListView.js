@@ -8,15 +8,15 @@ export default function JogoView() {
     const jogoService = jogoDi.makeJogoService()
     const jogoFiltro = new JogoFiltro()
 
-    jogoService
-        .list(jogoFiltro)
-        .then((result) => {
-            console.log(result);
-            setJogoList(result)
-            console.log(jogoList);
-        }).catch((err) => {
-            console.error(err);
-        });
+    // jogoService
+    //     .list(jogoFiltro)
+    //     .then((result) => {
+    //         console.log(result);
+    //         setJogoList(result)
+    //         console.log(jogoList);
+    //     }).catch((err) => {
+    //         console.error(err);
+    //     });
 
     return (
         jogoList.map(jogo => <img key={jogo.id} src={jogo.src}></img>)

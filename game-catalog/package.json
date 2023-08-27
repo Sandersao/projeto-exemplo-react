@@ -7,7 +7,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "env BROWSER=none && expo start --web",
+    "proxy": "cd proxy && docker-compose build --no-cache && docker-compose up"
   },
   "dependencies": {
     "@expo/webpack-config": "^18.1.2",

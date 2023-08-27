@@ -1,0 +1,7 @@
+services:
+  ngnix-reverse-proxy:
+    image: nginx-reverse-proxy
+    build: 
+      dockerfile: local.DockerFile
+    ports:
+      - 80:80
