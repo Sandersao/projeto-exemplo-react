@@ -4,4 +4,4 @@ services:
     build: 
       dockerfile: local.DockerFile
     ports:
-      - 80:80
+      - 8080:8080

@@ -1,8 +1,18 @@
 module.exports = class Pagination {
     start
     end
-    constructor(page, entriesPerPage = 10) {
+    constructor(page = 0, entriesPerPage = 10) {
+        this.calcPagination(page, entriesPerPage)
+    }
+
+    paginate(dataStructure, page = 0, entriesPerPage = 10) {
+        this.calcPagination(page, entriesPerPage)
+        return dataStructure
+            .slice(this.start, this.end)
+    }
+
+    calcPagination(page = 0, entriesPerPage = 10) {
         this.start = entriesPerPage * page
-        this.end = this.start + entriesPerPage - 1
+        this.end = this.start + entriesPerPage
     }
 }
