@@ -28,7 +28,7 @@ module.exports = class JogoDao {
         if (jogoFiltro.sortBy) {
             filtroList['sort-by'] = jogoFiltro.sortBy
         }
-        const url = '/api/games'
+        const url = 'http://localhost:8082/api/games'
         return this
             .httpClient
             .get(

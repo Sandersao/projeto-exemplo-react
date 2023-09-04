@@ -27,6 +27,7 @@ module.exports = class JogoService {
             .list(jogoFiltro)
             .then((jogoList) => {
                 return jogoList
+                    .data
                     .map(jogoRequest => {
                         return this
                             .jogoConverter

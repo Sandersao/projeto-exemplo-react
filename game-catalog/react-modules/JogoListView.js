@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import jogoDi from "../client/injection/assets/jogoDi";
 import JogoFiltro from "../client/filter/JogoFiltro";
 import Pagination from "../client/adapter/Pagination";
+import JogoView from "./JogoView";
 
-export default function JogoView() {
+export default function JogoListView() {
     const [requestCount, setRequestCount] = useState(0)
     const [jogoList, setJogoList] = useState([])
     const [page, setPage] = useState(0)
@@ -39,11 +40,5 @@ export default function JogoView() {
         setPage(nextPage)
     }
 
-    return (
-        <>
-            <button onClick={decrementPage}>Prev</button>
-            <button onClick={incrementPage}>Next</button>
-            {jogoList.map(jogo => <img key={jogo.id} src={jogo.thumbnail}></img>)}
-        </>
-    );
+    return jogoList.map(jogo => <JogoView key={jogo.id} thumbnail={jogo.thumbnail} incrementPage={incrementPage} decrementPage={decrementPage} />);
 }
