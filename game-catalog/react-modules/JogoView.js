@@ -1,8 +1,6 @@
-export default function JogoView(thumbnail, incrementPage, decrementPage) {
+export default function JogoView({ thumbnail }) {
     return (
         <>
-            <button onClick={decrementPage}>Prev</button>
-            <button onClick={incrementPage}>Next</button>
             <img src={thumbnail}></img>
         </>
     )

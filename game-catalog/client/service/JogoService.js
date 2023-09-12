@@ -22,10 +22,10 @@ module.exports = class JogoService {
      * @returns {Jogo[]}
      */
     list(jogoFiltro) {
-        let jogoList = this
+        return this
             .jogoDao
             .list(jogoFiltro)
-            .then((jogoList) => {
+            .then(jogoList => {
                 return jogoList
                     .data
                     .map(jogoRequest => {
@@ -34,7 +34,6 @@ module.exports = class JogoService {
                             .jogoRequestParaJogo(jogoRequest)
                     })
             })
-        return jogoList
     }
 
 }

@@ -12,6 +12,12 @@ module.exports = class Pagination {
     }
 
     calcPagination(page = 0, entriesPerPage = 10) {
+        if(typeof entriesPerPage == 'string') {
+            entriesPerPage = parseInt(entriesPerPage)
+        }
+        if(typeof page == 'string') {
+            page = parseInt(page)
+        }
         this.start = entriesPerPage * page
         this.end = this.start + entriesPerPage
     }

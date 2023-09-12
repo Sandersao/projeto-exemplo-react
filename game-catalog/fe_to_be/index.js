@@ -8,13 +8,21 @@ const host = 'https://www.freetogame.com'
 app.use(cors())
 
 app.get(/.*/, function (req, res) {
+    console.log(`${host}${req.url}`);
     fetch(`${host}${req.url}`)
         .then(response => {
             console.log(req.url, req.url == '/favicon.ico');
             if (req.url == '/favicon.ico') {
                 return []
             }
-            return response.json()
+            return response.text()
+        })
+        .then(rawData => {
+            try {
+                return JSON.parse(rawData)
+            } catch (err) {
+                return []
+            }
         })
         .then(data => {
             if (data.length == 0) {
